@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Sapieris</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="header">
+      <button
+        class="instr-btn"
+        id="instr-btn"
+        onclick="toggleInstruction('instruction')"
+      >
+        Instruction
+      </button>
+      <select name="difficulty" id="difficulty" onchange="setLevel()">
+        <option value="easy">Easy</option>
+        <option value="normal">Normal</option>
+        <option value="hard">Hard</option>
+        <option value="expert">Expert</option>
+      </select>
+    </div>
+    <div name="instruction" id="instruction">
+      <div class="text-wrapper" id="text-wrapper">
+        <p class="h1"><i>"Sapieris"</i></p>
+        <p class="h2"><i>Instrukcija</i></p>
+        <div class="i-text">
+          <strong>1. Mērķis:</strong> Sapieris spēles mērķis ir atklāt visus
+          laukumus uz spēles dēļa, kas nesatur mīnas, bez to uzspridzināšanas.
+          Spēlētājiem jāizmanto norādījumi, kas parādās atklātajos laukumos, lai
+          izvairītos no mīnām. <br>
+
+          <strong>2. Kā spēlēt:</strong>
+          <ul>
+            <li>
+              <strong>2.1 Spēles sākums:</strong> Izvēlies grūtības līmeni
+              (Viegls, Normāls, Grūts, Eksperts) no izvēlnes. Katram līmenim ir
+              atšķirīgs spēles dēļa izmērs un mīnu skaits. Pēc tam nospied
+              “Spēlēt”, lai uzsāktu spēli.
+            </li>
+            <li>
+              <strong>2.2 Laukuma atklāšana:</strong> Spēles laikā noklikšķini
+              uz laukuma, lai to atklātu. Ja laukums ir tukšs (neveido mīnu),
+              tas parādīs skaitli, kas norāda mīnu skaitu blakus laukumos. Ja
+              laukums satur mīnu, spēle beigsies, un tu zaudēsi.
+            </li>
+          </ul>
+
+          <strong>3. Lauks ar skaitli:</strong> Ja laukums parāda skaitli
+          (piemēram, "1", "2", "3" utt.), tas nozīmē, ka apkārtnē ir tik daudz
+          mīnu. Šo skaitli izmanto, lai secinātu, kur varētu būt mīnas.
+
+          <strong>4. Lauks ar mīnu:</strong> Ja noklikšķināsi uz laukuma, kas
+          satur mīnu, spēle beigsies ar "Spēles beigas" ziņu. Pēc spēles beigām
+          visas mīnas tiks atklātas, un spēlētājs var mēģināt vēlreiz.
+
+          <strong>5. Zīmēšana:</strong> Spēlētāji var atzīmēt laukumus, kur viņi
+          uzskata, ka ir mīnas, ar labo peles klikšķi, lai pievienotu sarkano
+          karogu. Tas palīdzēs atcerēties, kur neklikšķināt.
+
+          <strong>6. Uzvara:</strong> Uzvara tiek sasniegta, ja visi laukumi,
+          kas nesatur mīnas, tiek atklāti. Ja visi neatklātie laukumi ir vai nu
+          mīnas, vai atzīmēti kā karogi, spēlētājs uzvar.
+
+          <strong>7. Papildu padomi:</strong>
+          <ul>
+            <li>
+              <strong>7.1 Pārdomā pirms klikšķināšanas:</strong> Ja neesi
+              pārliecināts, kur ir mīnas, vari izmantot iespēju atzīmēt laukumus
+              ar karogiem.
+            </li>
+            <li>
+              <strong>7.2 Izmanto skaitļus, lai plānotu:</strong> Ja atklāj
+              skaitli, tas norāda, cik mīnas ir blakus laukumiem, un tas var
+              palīdzēt veikt pareizus pieņēmumus.
+            </li>
+          </ul>
+
+          <strong>8. Paziņojumi:</strong> Ja uzvarēsi, tiks parādīts uzvaras
+          paziņojums. Ja spēle beidzas ar mīnu, tiks parādīts "Spēles beigas"
+          paziņojums.
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="play-btn"
+      id="play-btn"
+      onclick="showGame('play-btn', 'game', 'difficulty'), startNewGame()"
+    >
+      Play
+    </button>
+
+    <div id="game"></div>
+
+    <p id="message"></p>
+    <button
+      class="retry-btn"
+      id="retryButton"
+      style="display: none"
+      onclick="retryGame()"
+    >
+      Retry
+    </button>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
